@@ -9,14 +9,18 @@ class CarConfig:
         
     def create_car(self): 
         new_car = Turtle()
-        colors = ['brown', 'white', 'black', 'cyan', 'grey', 'green', 'yellow', 'purple']    
+        colors = ['brown', 'cyan', 'grey', 'green', 'yellow', 'purple']    
         new_car.shape('square')
         new_car.penup()
-        new_car.shapesize(3, 2.5)
+        new_car.shapesize(3, 3.2)
         new_car.setheading(270)
         new_car.color(random.choice(colors))
         new_car.goto(random.choice(self.local))
         self.cars.append(new_car)
+    
+    def appear_car(self): 
+        if self.cars[-1].ycor() < 20:
+            self.create_car()
     
     def move_car(self): 
         for car in self.cars:
