@@ -8,3 +8,11 @@ class Player(Turtle):
         self.setheading(90)
         self.penup()
         self.goto(0, -220)
+        
+    def move_right(self): 
+        new_pos = self.xcor()+60
+        self.goto(new_pos, self.ycor())
+    
+    def move_left(self): 
+        new_pos = self.xcor()-60
+        self.goto(new_pos, self.ycor())
